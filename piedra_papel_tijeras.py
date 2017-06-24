@@ -1,10 +1,6 @@
-##Piedra, papel o tijeras##
+##Rock, paper o scissors##
 
-#Tijeras le gana al papel y pierde contra la piedra
-#Papel le gana a la piedra y pierde contra las tijeras
-#Piedra le gana a las tijeras y pierde contra el papel
-
-#Coded by Jesus Bibieca on 6/21/2017...
+#Written by Jesus Bibieca on 6/21/2017...
 
 import random # I import the necessary library
 import time #This will import the module time to be able to wait
