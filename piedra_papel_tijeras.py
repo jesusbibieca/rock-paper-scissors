@@ -1,87 +1,83 @@
-##Piedra, papel o tijeras##
+##Rock, paper o scissors##
 
-#Tijeras le gana al papel y pierde contra la piedra
-#Papel le gana a la piedra y pierde contra las tijeras
-#Piedra le gana a las tijeras y pierde contra el papel
-
-#Coded by Jesus Bibieca on 6/21/2017...
+#Written by Jesus Bibieca on 6/21/2017...
 
 import random # I import the necessary library
 import time #This will import the module time to be able to wait
 
 #chose = "" #Initializing variables
 
-def computer(): #This function will get a rand value between 1-99 and depending on the number I'll select either "piedra, papel o tijeras"
+def computer(): #This function will get a rand value between 1-99 and depending on the number I'll select either "rock, paper o scissors"
     for i in range(1): #Determines the amount of numbers that will be returned
         rand_value = random.randint(1, 99) #Set the limits of the random library 
 
         if rand_value <= 33:
-            chose = "piedra"
+            chose = "rock"
         elif rand_value <= 66:
-            chose = "papel"
+            chose = "paper"
         else:
-            chose = "tijeras"
+            chose = "scissors"
        
         return chose #Gives back an answer with the computer's selection
 
 def game(): #This function is the game perce
     print
-    print "Este es el juego de piedra, papel o tijeras escrito por Jesus Bibieca." #Display msgs
-    #print "n\"
-    user = raw_input("Escoja piedra, papel o tijeras y digitelo a continuacion: ")#Takes user's entry
+    print "This is the rock, paper, scissors' game written by Jesus Bibieca." #Display msgs
+    print
+    user = raw_input("Choose rock, paper or scissors and type it to play: ")#Takes user's entry
 
     selection = computer()#Look for a rand selection
 
 
     if user == selection:#Here below I've set a way to determine who wins
-        print "Usted eligio: ", user, " y la computadora eligio: ", selection
-        print "Fue un empate."
+        print "You chose: ", user, " and the computer chose: ", selection
+        print "It was a tie."
 
-    elif user == "piedra" and selection == "papel":
-        print "Usted eligio: ", user, " y la computadora eligio: ", selection
-        print "Usted perdio."
+    elif user == "rock" and selection == "paper":
+        print "You chose: ", user, " and the computer chose: ", selection
+        print "You lost."
 
-    elif user == "piedra" and selection == "tijeras":
-        print "Usted eligio: ", user, " y la computadora eligio: ", selection
-        print "Usted gano!"
+    elif user == "rock" and selection == "scissors":
+        print "You chose: ", user, " and the computer chose: ", selection
+        print "You won!"
 
-    elif user == "papel" and selection == "piedra":
-        print "Usted eligio: ", user, " y la computadora eligio: ", selection
-        print "Usted gano!"
+    elif user == "paper" and selection == "rock":
+        print "You chose: ", user, " and the computer chose: ", selection
+        print "You won!"
 
-    elif user == "papel" and selection == "tijeras":
-        print "Usted eligio: ", user, " y la computadora eligio: ", selection
-        print "Usted perdio."
+    elif user == "paper" and selection == "scissors":
+        print "You chose: ", user, " and the computer chose: ", selection
+        print "You lost."
 
-    elif user == "tijeras" and selection == "piedra":
-        print "Usted eligio: ", user, " y la computadora eligio: ", selection
-        print "Usted perdio."
+    elif user == "scissors" and selection == "rock":
+        print "You chose: ", user, " and the computer chose: ", selection
+        print "You lost."
 
-    elif user == "tijeras" and selection == "papel":
-        print "Usted eligio: ", user, " y la computadora eligio: ", selection
-        print "Usted gano!"
+    elif user == "scissors" and selection == "paper":
+        print "You chose: ", user, " and the computer chose: ", selection
+        print "You won!"
 
     else:
         print
-        print "Usted eligio: ", user, " y esto no es una opcion valida"
+        print "You chose: ", user, " and this is not a valid option."
 
     time.sleep(3) #The game waits for 3 secs and then starts again. 
     play_again()
 
 def play_again():
     print 
-    keep_play = raw_input("Deseas volver a jugar? (Digita si o no) ")
-    if keep_play == "si":
+    keep_play = raw_input("Do you want to play again? (Type yes or no) ")
+    if keep_play == "yes":
         time.sleep(2)
         game()
     elif keep_play == "no":
         print
-        print "Gracias por jugar!"
+        print "Thank you for playing!"
         time.sleep(2)
         exit()
     else:
         print
-        print "Esta no es una opcion valida. Por favor introduce si o no."
+        print "This is not a valid option."
         play_again()
 
 game()#The game executes.
